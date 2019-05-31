@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Characters from './components/Characters';
+import Character from './components/Character';
 
 class App extends Component {
   constructor() {
@@ -36,10 +36,9 @@ class App extends Component {
         <h1 className="Header">React Wars</h1>
         <div className='characters'>
           {this.state.starwarsChars.map(character => (
-            <Characters character={character} />
+            <Character character={character} />
           ))}
         </div>
-        <Characters />
       </div>
     );
   }
