@@ -1,8 +1,19 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .Header {
   color: #443e3e;
-  text-shadow: 1px 1px 5px #fff;
+  text-shadow: 2px 2px 3px #fff;
+  font-size: 3rem;
 }
-/* write your parent styles in here for your App.js */
+
+.characters {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 80%;
+}
