@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import Character from './components/Character';
+import Dog from './components/Dog';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      dogs: []
     };
   }
 
   componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people/');
+    this.getCharacters('https://dog.ceo/api/breed/african/images');
   }
 
   getCharacters = URL => {
@@ -23,7 +23,8 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ starwarsChars: data.results });
+        console.log("DATA: ", data)
+        this.setState({ dogs: data.message });
       })
       .catch(err => {
         throw new Error(err);
@@ -33,12 +34,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="Header">React Wars</h1>
-        <div className='characters'>
-          {this.state.starwarsChars.map(character => (
-            <Character character={character} />
+        <h1 className="Header">African Dog Photos</h1>
+        <div className='dogs'>
+          {this.state.dogs.map(dog => (
+            <Dog dog={dog} />
           ))}
         </div>
+        <footer>Photos from <a href='https://dog.ceo/dog-api/#all'>https://dog.ceo/dog-api/#all</a></footer>
       </div>
     );
   }
