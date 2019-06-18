@@ -1,0 +1,10 @@
+.character {
+    box-shadow: 3px 3px black;
+    color: black;
+    background-color: aliceblue;
+    opacity: 0.7;
+    border-radius: 15px;
+    padding: 0.5rem;
+    margin: 2rem 0 2rem 0;
+    width: 20rem;
+}
